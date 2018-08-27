@@ -89,6 +89,10 @@
                value="platform:/plugin/org.netxms.ui.eclipse.console/css/default.css">
          </property>
          <property
+               name="applicationXMI"
+               value="Core/nxmc.e4xmi">
+         </property>
+         <property
                name="preferenceCustomization"
                value="plugin_customization.ini">
          </property>
