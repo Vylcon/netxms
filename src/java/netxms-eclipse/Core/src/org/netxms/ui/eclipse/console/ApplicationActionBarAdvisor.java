@@ -75,8 +75,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor
 	private IWorkbenchAction actionResetPerspective;
 	private IWorkbenchAction actionClosePerspective;
 	private IWorkbenchAction actionCloseAllPerspectives;
-	private IWorkbenchAction actionMinimize;
-	private IWorkbenchAction actionMaximize;
+	private Action actionMinimize;
+	private Action actionMaximize;
    private Action actionClose;
 	private IWorkbenchAction actionPrevView;
 	private IWorkbenchAction actionNextView;
@@ -155,10 +155,10 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor
 		actionCloseAllPerspectives = ActionFactory.CLOSE_ALL_PERSPECTIVES.create(window);
 		register(actionCloseAllPerspectives);
 		
-		actionMinimize = ActionFactory.MINIMIZE.create(window);
+		actionMinimize = new CommandAction(window, IWorkbenchCommandConstants.WINDOW_MAXIMIZE_ACTIVE_VIEW_OR_EDITOR);
 		register(actionMinimize);
 		
-		actionMaximize = ActionFactory.MAXIMIZE.create(window);
+		actionMaximize = new CommandAction(window, IWorkbenchCommandConstants.WINDOW_MINIMIZE_ACTIVE_VIEW_OR_EDITOR);
 		register(actionMaximize);
 		
 		actionClose = new CommandAction(window, IWorkbenchCommandConstants.WINDOW_CLOSE_PART);
